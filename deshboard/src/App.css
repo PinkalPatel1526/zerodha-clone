@@ -1,0 +1,274 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+td, th {
+  padding: 10px;
+}
+
+
+button {
+  border: none;
+  width: 13rem;
+  height: 2.8rem;
+  padding: 8px 30px;
+  color: #fff;
+  background-color: #387ed1;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+.topbar-container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  z-index: 9;
+}
+
+.indece-container {
+  flex-basis: 32%;
+  display: flex;
+  padding: 1rem 0.5rem;
+  align-items: center;
+  justify-content: space-around;
+  border-right: 1px solid rgb(224, 224, 224);
+  height: 100%;
+}
+
+.index-name {
+  font-weight: 400;
+  font-size: 0.9em;
+  margin-right: 0.5rem;
+}
+
+.index-price {
+  font-weight: 500;
+  color: #df514c;
+  font-size: 0.9em;
+}
+
+.navbar {
+  border-bottom: 1px solid #999898;
+  height: 4rem;
+}
+
+.nav-link:hover {
+  color: #df514c;
+  font-weight: 400;
+}
+
+.item-selected {
+  color: #e54741;
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+.sidebar {
+  padding: 0;
+}
+
+.home-container {
+  display: flex;
+}
+
+.stocks-container {
+  flex-basis: 32%;
+  border: 1px solid rgb(224, 224, 224);
+}
+
+.menu-container {
+  flex-basis: 68%;
+  height: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(224, 224, 224);
+}
+
+.menus {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.menus ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.menus li {
+  display: inline-block;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+.menus li p {
+  margin: 0;
+  color: black;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.profile .avatar {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  position: relative;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgb(221, 139, 221);
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  text-align: center;
+  display: flex;
+  background: rgb(252, 229, 252);
+  margin-right: 8px;
+}
+
+.profile .username {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.menu:hover {
+  color: rgb(245, 104, 52);
+}
+
+.profile:hover {
+  cursor: pointer;
+}
+
+.profile:hover .username {
+  cursor: pointer;
+  color: rgb(223, 91, 43);
+}
+
+.menu.selected {
+  color: rgb(245, 104, 52);
+}
+
+.sidebar-items {
+  width: 100%;
+  overflow-y: auto; 
+  padding: 1rem;
+  height: 620px 
+}
+
+.pages {
+  flex-basis: 68%;
+  padding: 20px;
+  overflow-y: auto; 
+  height: 43rem
+}
+
+@media (max-width: 1140px) {
+  .indece-container, .watchList-container {
+    display: none;
+  }
+  .pages, .menu-container {
+    flex-basis: 100%;
+  }
+}
+
+.profit {
+  color: green;
+}
+
+.loss {
+  color:  red;
+}
+
+.stock-list {
+  list-style: none;
+
+  
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem;
+  cursor:move;
+  position: relative;
+}
+
+.list {
+  padding: 0;
+}
+
+.list li {
+  position: relative;
+}
+
+
+.down {
+  color: red;
+}
+
+.up {
+  color: green;
+}
+
+.search {
+  width: 85%;
+  height: 3rem;
+  border: none;
+  padding: 0 0.5rem;
+  margin-bottom: 0.8rem ;
+}
+
+.btn-size {
+  width: 1rem;
+  height: 3rem;
+}
+
+.actions span button {
+  margin-left: 2.5rem;
+  width: 15%;
+  padding: 0;  
+}
+
+.buy {
+  background-color: green;
+}
+.sell {
+  background-color: red;
+}
+
+.buyAndSellStock-container {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  left: 32%;
+  top: 60%;
+  height: 40%;
+}
+
+.BS-decs button{
+  width: 20%;
+  padding: 0;
+  margin: 1rem 0.2rem;
+}
+
+
+

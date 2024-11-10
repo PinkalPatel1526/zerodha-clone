@@ -1,0 +1,168 @@
+/* Landing page links */
+
+.landing-page-links a {
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.landing-page-links a:hover {
+    color: black;
+}
+
+.price-img img {
+    height: 90px;
+    margin-left: 1%;
+    position: relative;
+    top: 20px;
+    left: 14px;
+}
+
+.price-img div {
+    display: flex;
+    justify-content: baseline;
+    align-items: end;
+}
+
+.price-img span  {
+    font-size: 0.7em;
+
+}
+
+@media (max-width: 500px) {
+
+    .price-img {
+        flex-direction: column;
+    }
+
+    .price-img div {
+       margin-top: 5%;
+    }
+}
+
+
+/* nav bar */
+.nav-link {
+    font-size: 1.1em;
+}
+
+.nav-link:hover {
+    color: #387ed1;
+}
+
+/* Footer */
+.logos a {
+    text-decoration: none;
+    color: #808080;
+    font-size: 1.9em;
+    margin-left: 1.5rem;
+}
+
+.logos a:hover {
+    color: #387ed1;
+}
+
+.footer-head a {
+    margin-bottom: 1rem;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: black;
+    font-weight: 400;
+}
+
+
+.footer-head ~ li {
+    padding-top: 10px;
+   
+  }
+  
+  .footer-head ~ li a {
+    color: rgb(110, 108, 108);
+    font-size: 1.1em;
+    text-decoration: none;
+  }
+
+  .footer-head ~ li a:hover {
+    color: #387ed1; 
+  }
+
+  .bottom-items li {
+    display: inline;
+    margin-left: 5rem;
+  }
+
+  .bottom-items li a {
+    text-decoration: none;
+    color: #808080;
+  }
+
+  .bottom-items li a:hover {
+    color: #387ed1;
+  }
+
+  .info-footer {
+    margin-top: 2.5rem;
+  }
+
+  .info-footer p {
+    font-size: 0.8em;
+    color: #808080;
+  }
+  
+@media (max-width: 500px) {
+
+    .main-footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-footer div {
+        margin-top: 1.5rem;
+    }   
+}
+
+/* Signup page */
+.signup-info p {
+    font-size: 0.9em;
+}
+
+.about-info p {
+    padding-top: 1rem;
+    font-size: 1.17em;
+}
+
+/* product page */
+
+
+
+
+@media (max-width: 500px) {
+    .other-product {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+
+/* supprt page */
+.support-links a {
+    color: #387ed1;
+    text-decoration: none;
+}
+
+.support-links a span:hover {
+    color: #387ed1;
+}
+
+.support-header a {
+    color: #fff;
+}
+
+.serach-links a {
+    margin-left: 1rem;
+    font-size: 1.1em;
+}
+
+ 
+
+
+  

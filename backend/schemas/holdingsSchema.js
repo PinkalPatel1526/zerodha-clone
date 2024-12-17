@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+const { Schema, default: mongoose } = require("mongoose");
 
 module.exports.holdingsSchema = new Schema({
   name: {
@@ -27,5 +27,10 @@ module.exports.holdingsSchema = new Schema({
   },
   isLoss: {
     type: Boolean,
+  },
+  userId: {
+    type: mongoose.Schema.ObjectId, 
+    ref: "User",          
+    required: true,      
   },
 });

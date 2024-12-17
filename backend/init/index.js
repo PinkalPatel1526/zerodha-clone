@@ -3,6 +3,7 @@ const { model } = require("mongoose");
 const { holdings, positions } = require("../init/data.js");
 const holdingModel = require("../models/holdingModel.js");
 const { positionModel } = require("../models/positionModel.js");
+const orderModel = require("../models/orderModel.js");
 
 //DB connction
 mongoose
@@ -29,13 +30,21 @@ mongoose
 //   addData();
 
 //Position data add
-let addData = async () => {
-  try {
-    await positionModel.insertMany(positions);
-    console.log("Data Added");
-  } catch (err) {
-    console.log(err);
-  }
-};
+// let addData = async () => {
+//   try {
+//     await positionModel.insertMany(positions);
+//     console.log("Data Added");
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
 
-addData();
+// addData();
+
+let deleteData = async() => {
+  await orderModel.deleteMany({});
+  console.log("Data delted");
+
+}
+
+deleteData();

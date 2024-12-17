@@ -9,18 +9,18 @@ export default function Holding() {
   });
   
   let currPandL = holdingsValue.currValue - holdingsValue.totalInvest;
+  const id = localStorage.getItem("id");
 
   useEffect(() => {
     axion
-      .get("http://localhost:8080/allHoldings ")
+      .get(`http://localhost:8080/allHoldings/${id}`)
       .then((res) => {
-        console.log(res.data);
         setholdings(res.data);
 
         const totalInvest = res.data.reduce((sum, stock) => {
           return sum + stock.avg * stock.qty;
         }, 0);
-
+        
         const currValue = res.data.reduce((sum, stock) => {
           return sum + stock.price * stock.qty;
         }, 0);

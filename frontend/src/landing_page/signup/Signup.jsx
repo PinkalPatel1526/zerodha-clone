@@ -132,7 +132,9 @@ export default function Login() {
         })
         .then((res) => {
           handleSuccess(res.data.message);
-          window.location.href = 'http://localhost:5174/'
+          
+          window.location.href = 'http://localhost:5174/login'
+
         })
         .catch((error) => {
           console.error(error, "server error");
@@ -269,9 +271,9 @@ export default function Login() {
           </form>
           <p>
             If you have already account,
-            <Link aria-current="page" to="/login">
+            <a aria-current="page" href=" http://localhost:5174/login">
               login
-            </Link>
+            </a>
           </p>
           <ToastContainer />
         </div>

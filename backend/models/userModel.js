@@ -1,6 +1,7 @@
-const { model } = require("mongoose");
+const { model, default: mongoose } = require("mongoose");
 const bcrypt = require("bcryptjs");
 const { Schema } = require("mongoose");
+// const holdingModel = require("./holdingModel");
 
 const userSchema = new Schema({
   mobailNumber: {
@@ -36,6 +37,24 @@ const userSchema = new Schema({
     required: [true, "Your bank account number is required"],
     unique: true,
   },
+  holding: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref:"holding",
+    }
+  ],
+  order: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref:"order",
+    }
+  ],
+  position: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref:"position",
+    }
+  ],
   createdAt: {
     type: Date,
     default: new Date(),

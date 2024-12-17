@@ -1,6 +1,7 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import axios from 'axios';
+import { handleError, handleSuccess} from '../util/tostify'
 
 export default function BuyStock({ buyUid, showBuystock, setshowBuystock }) {
 
@@ -9,12 +10,14 @@ export default function BuyStock({ buyUid, showBuystock, setshowBuystock }) {
   let [amount, setAmount] = React.useState(0);
 
   let handleBuy = () => {
-      axios.post('http://localhost:8080/newOrder', {
+      const id = localStorage.getItem("id");
+      axios.post(`http://localhost:8080/newOrder/${id}`, {
         name: buyUid[0],
         qty: StockQty,
         price: buyUid[1],
         mode: "BUY"
       })
+
 
       const updated = [...showBuystock];
       updated[0] = false;

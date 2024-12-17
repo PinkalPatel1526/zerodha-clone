@@ -21,6 +21,5 @@
     "nodemon": "^3.1.7",
     "react-toastify": "^10.0.6"
   },
-  "devDependencies": {},
   "description": ""
 }

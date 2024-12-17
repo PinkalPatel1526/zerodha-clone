@@ -1,17 +1,35 @@
 import { useState } from "react";
-import Kite from '../assets/kite-logo.svg'
-
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Kite from "../assets/kite-logo.svg";
 import { Link } from "react-router-dom";
+
 export default function Menu() {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
   };
 
-  const handleProfileClick = (index) => {
+  const handleProfileClick = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
+  };
+
+  const handleLogout = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/logout"); 
+      if (response.status === 200) {
+        localStorage.removeItem('token'); 
+        localStorage.removeItem('id'); 
+        navigate("/login"); 
+      } else {
+        console.error("Logout failed");
+      }
+    } catch (error) {
+      console.error("Error during logout:", error);
+    }
   };
 
   const menuClass = "menu";
@@ -69,7 +87,7 @@ export default function Menu() {
           <li>
             <Link
               style={{ textDecoration: "none" }}
-              to="funds"
+              to="/funds"
               onClick={() => handleMenuClick(4)}
             >
               <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>
@@ -78,15 +96,17 @@ export default function Menu() {
             </Link>
           </li>
           <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/apps"
-              onClick={() => handleMenuClick(6)}
+            <p
+              style={{ textDecoration: "none", cursor:"pointer" }}
+              onClick={(e) => {
+                e.preventDefault(); 
+                handleLogout(); 
+              }}
             >
-              <p className={selectedMenu === 6 ? activeMenuClass : menuClass}>
-                Apps
-              </p>
-            </Link>
+              <span className={selectedMenu === 6 ? activeMenuClass : menuClass}>
+                Logout
+              </span>
+            </p>
           </li>
         </ul>
         <hr />

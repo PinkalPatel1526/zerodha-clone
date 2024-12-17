@@ -3,13 +3,13 @@ import TextField from "@mui/material/TextField";
 import axios from 'axios';
 
 export default function sellStock({ sellUid, showBuystock, setshowBuystock }) {
-
   let [StockQty, setQty] = React.useState(1);
   let [price, setPrice] = React.useState(0.0);
   let [amount, setAmount] = React.useState(0);
 
   let handleSell = () => {
-      axios.post('http://localhost:8080/newOrder', {
+      const id = localStorage.getItem("id");
+      axios.post(`http://localhost:8080/newOrder/${id}`, {
         name: sellUid[0],
         qty: StockQty,
         price: sellUid[1],
